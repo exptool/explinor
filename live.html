@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TX-linor, AP och CNN</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            }
+		.main-header {
+    	background-color: #0076D6; /* Sätter bakgrundsfärgen till svart */
+    	color: white; /* Sätter textfärgen till vit */
+	    text-align: center;
+	    font-weight: bold;
+    	margin: 2px 0; /* 3px marginal upptill och nedtill, 0 på sidorna */
+   		padding: 4px 0; /* Lämplig padding inuti balken för att ge utrymme ovanför och nedanför texten */
+	    font-size: 100%; /* Sätter textstorleken till 100% */
+	    width: 100%; /* Ser till att balken sträcker sig över hela bredden */
+    	box-sizing: border-box; /* Inkluderar padding i bredden */
+		}
+		.player-headerTX {
+        background-color: #141414; /* Exempel: mörkblå bakgrund */
+        color: White; /* Vit text */
+        text-align: left;
+        font-weight: bold;
+        font-size: 75%; /* Sätter textstorleken till 100% */
+        padding: 3px;
+        margin-bottom: 0px; /* Lägg till lite utrymme mellan rubriken och videospelaren */
+            /* Lägg till andra stilar du behöver, som font-size, font-weight, etc. */
+        }
+ 		.player-headerCNN {
+        background-color: #de0734; /* Exempel: mörkblå bakgrund */
+        color: White; /* Vit text */
+        text-align: left;
+        font-weight: bold;
+        font-size: 75%; /* Sätter textstorleken till 100% */
+        padding: 3px;
+        margin-bottom: 0px; /* Lägg till lite utrymme mellan rubriken och videospelaren */
+            /* Lägg till andra stilar du behöver, som font-size, font-weight, etc. */
+        }
+      	.player-headerAP {
+        background-color: #205c1c; /* Exempel: mörkblå bakgrund */
+        color: White; /* Vit text */
+        text-align: left;
+        font-weight: bold;
+        font-size: 75%; /* Sätter textstorleken till 100% */
+        padding: 3px;
+        margin-bottom: 0px; /* Lägg till lite utrymme mellan rubriken och videospelaren */
+            /* Lägg till andra stilar du behöver, som font-size, font-weight, etc. */
+        }
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 2px;
+        }
+        .player {
+            width: 33.33%; /* Varje spelare tar upp hälften av bredden */
+            box-sizing: border-box;
+            padding: 3px;
+        }
+        .player p {
+            font-weight: bold;
+            text-align: left;
+            margin: 0 0 2px;
+        }
+        .player video {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-header">
+    Förhandsvisning – Expressens TX-linor
+</div>
+
+<div class="video-container">
+    <!-- Spelare 1 -->
+    <div class="player">
+        <div class="player-headerTX">TX1</div>
+        <video controls muted loop>
+            <source src="https://cdn0-03837-liveedge0.dna.ip-only.net/03837-liveedge0/smil:03837-tx1/playlist.m3u8" type="application/x-mpegURL">
+            Din webbläsare stöder inte video-taggen.
+        </video>
+    </div>
+
+    <!-- Spelare 2 -->
+    <div class="player">
+        <div class="player-headerTX">TX2</div>
+        <video controls muted loop>
+            <source src="https://cdn0-03837-liveedge0.dna.ip-only.net/03837-liveedge0/smil:03837-tx2/playlist.m3u8" type="application/x-mpegURL">
+            Din webbläsare stöder inte video-taggen.
+        </video>
+    </div>
+
+    <!-- Spelare 3 -->
+    <div class="player">
+        <div class="player-headerTX">TX3</div>
+        <video controls muted loop>
+            <source src="https://cdn0-03837-liveedge0.dna.ip-only.net/03837-liveedge0/smil:03837-tx3/playlist.m3u8" type="application/x-mpegURL">
+            Din webbläsare stöder inte video-taggen.
+        </video>
+    </div>
+
+    <!-- Spelare 4 -->
+    <div class="player">
+        <div class="player-headerTX">TX3</div>
+        <video controls muted loop>
+            <source src="https://cdn0-03837-liveedge0.dna.ip-only.net/03837-liveedge0/smil:03837-tx4/playlist.m3u8" type="application/x-mpegURL">
+            Din webbläsare stöder inte video-taggen.
+        </video>
+    </div>
+
+    <!-- Spelare 5 -->
+    <div class="player">
+        <div class="player-headerTX">TX4</div>
+        <video controls muted loop>
+            <source src="https://cdn0-03837-liveedge0.dna.ip-only.net/03837-liveedge0/smil:03837-tx5/playlist.m3u8" type="application/x-mpegURL">
+            Din webbläsare stöder inte video-taggen.
+        </video>
+    </div>
+
+    <!-- Spelare 6 -->
+    <div class="player">
+        <div class="player-headerTX">TX5</div>
+        <video controls muted loop>
+            <source src="https://cdn0-03837-liveedge1.dna.ip-only.net/03837-liveedge1/smil:03837-tx6/playlist.m3u8" type="application/x-mpegURL">
+            Din webbläsare stöder inte video-taggen.
+        </video>
+    </div>
+</div>
+	<div class="main-header">
+	Förhandsvisning – livelinor från CNN
+	</div>
+	
+<div class="video-container">
+        <!-- Spelare 7 -->
+    <div class="player">
+        <div class="player-headerCNN">CNN – Ins HD1</div>
+        <video controls muted loop>
+            <source src="https://newsource-live.warnermediacdn.com/hls/live/2005450/intl01/master.m3u8" type="application/x-mpegURL">
+            Din webbläsare stöder inte video-taggen.
+        </video>
+    </div>
+
+    <!-- Spelare 8 -->
+    <div class="player">
+         <div class="player-headerCNN">CNN – Ins HD2</div>
+        <video controls muted loop>
+            <source src="https://newsource-live.warnermediacdn.com/hls/live/2005451/intl02/master.m3u8" type="application/x-mpegURL">
+            Din webbläsare stöder inte video-taggen.
+        </video>
+    </div>
+
+    <!-- Spelare 9 -->
+    <div class="player">
+         <div class="player-headerCNN">CNN – Ins HD3</div>
+        <video controls muted loop>
+            <source src="https://newsource-live.warnermediacdn.com/hls/live/2005452/intl03/master.m3u8" type="application/x-mpegURL">
+            Din webbläsare stöder inte video-taggen.
+        </video>
+    </div>
+        <!-- Spelare 10 -->
+    <div class="player">
+         <div class="player-headerCNN">CNN – Ins HD4</div>
+        <video controls muted loop>
+            <source src="https://newsource-live.warnermediacdn.com/hls/live/2005453/intl04/master.m3u8" type="application/x-mpegURL">
+            Din webbläsare stöder inte video-taggen.
+        </video>
+    </div>
+</div>
+	<div class="main-header">
+	Förhandsvisning – livelinor från AP
+	</div>
+	
+	<div class="video-container">
+        <!-- Spelare 11 -->
+    <div class="player">
+        <div class="player-headerAP">AP Direkt</div>
+        <video controls muted loop>
+            <source src="https://streaming-a-806.cdn.nextologies.com/Ugg7ohj1KOol2v04/playlist.m3u8" type="application/x-mpegURL">
+            Din webbläsare stöder inte video-taggen.
+        </video>
+    </div>
+
+    <!-- Spelare 12 -->
+    <div class="player">
+        <div class="player-headerAP">AP live choice 1</div>
+        <video controls muted loop>
+            <source src="https://streaming-a-806.cdn.nextologies.com/4M2gqURXdsxuPj01/playlist.m3u8" type="application/x-mpegURL">
+            Din webbläsare stöder inte video-taggen.
+        </video>
+    </div>
+
+    <!-- Spelare 13 -->
+    <div class="player">
+        <div class="player-headerAP">AP live choice 2</div>
+        <video controls muted loop>
+            <source src="https://streaming-a-806.cdn.nextologies.com/SCNek2Fa6TFmNF02/playlist.m3u8" type="application/x-mpegURL">
+            Din webbläsare stöder inte video-taggen.
+        </video>
+    </div>
+        <!-- Spelare 14 -->
+    <div class="player">
+        <div class="player-headerAP">AP live choice 3</div>
+        <video controls muted loop>
+            <source src="https://streaming-a-806.cdn.nextologies.com/eZWEYDN1QYcHsM03/playlist.m3u8" type="application/x-mpegURL">
+            Din webbläsare stöder inte video-taggen.
+        </video>
+    </div>
+		<!-- Spelare 14 -->
+    <div class="player">
+        <div class="player-headerAP">AP live choice 4</div>
+        <video controls muted loop>
+            <source src="https://streaming-a-806.cdn.nextologies.com/dd20476021b1fc5dd4fe0e50fabdc2bz/playlist.m3u8" type="application/x-mpegURL">
+            Din webbläsare stöder inte video-taggen.
+        </video>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var videoElements = document.querySelectorAll('video');
+
+        videoElements.forEach(function (video) {
+            if (Hls.isSupported()) {
+                var hls = new Hls();
+                hls.loadSource(video.querySelector('source').src);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                    video.play();
+                });
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.addEventListener('canplay', function () {
+                    video.play();
+                });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
