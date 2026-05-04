@@ -7,42 +7,14 @@
 <title>TX-linor, AP och CNN</title>
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-    }
-    .main-header {
-        background-color: #0076D6;
-        color: white;
-        text-align: center;
-        font-weight: bold;
-        margin: 2px 0;
-        padding: 4px 0;
-        font-size: 100%;
-        width: 100%;
-        box-sizing: border-box;
-    }
+    body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    .main-header { background-color: #0076D6; color: white; text-align: center; font-weight: bold; margin: 2px 0; padding: 4px 0; font-size: 100%; width: 100%; box-sizing: border-box; }
     .player-headerTX { background-color: #141414; color: white; text-align: left; font-weight: bold; font-size: 75%; padding: 3px; margin-bottom: 0; }
     .player-headerCNN { background-color: #de0734; color: white; text-align: left; font-weight: bold; font-size: 75%; padding: 3px; margin-bottom: 0; }
     .player-headerAP { background-color: #205c1c; color: white; text-align: left; font-weight: bold; font-size: 75%; padding: 3px; margin-bottom: 0; }
-    
-    .video-container {
-        display: flex;
-        flex-wrap: wrap;
-        padding: 2px;
-    }
-    .player {
-        width: 25%;
-        box-sizing: border-box;
-        padding: 3px;
-    }
-    .player video {
-        width: 100%;
-        height: auto;
-    }
-    /* Mobilanpassning */
-    @media (max-width: 800px) { .player { width: 50%; } }
+    .video-container { display: flex; flex-wrap: wrap; padding: 2px; }
+    .player { width: 25%; box-sizing: border-box; padding: 3px; }
+    .player video { width: 100%; height: auto; }
 </style>
 </head>
 <body>
@@ -62,13 +34,13 @@
     <div class="player"><div class="player-headerCNN">CNN – Ins HD3</div><video controls autoplay muted loop><source src="https://newsource-live.warnermediacdn.com/hls/live/2005452/intl03/master.m3u8" type="application/x-mpegURL"></video></div>
     <div class="player"><div class="player-headerCNN">CNN – Ins HD4</div><video controls autoplay muted loop><source src="https://newsource-live.warnermediacdn.com/hls/live/2005453/intl04/master.m3u8" type="application/x-mpegURL"></video></div>
 
-    <div class="player"><div class="player-headerCNN">CNN – Channel 1</div><video controls autoplay muted loop><source src="https://newsource-live.warnermediacdn.com/hls/live/2005454/intl05/master.m3u8" type="application/x-mpegURL"></video></div>
-    <div class="player"><div class="player-headerCNN">CNN – Channel 2</div><video controls autoplay muted loop><source src="https://newsource-live.warnermediacdn.com/hls/live/2005455/intl06/master.m3u8" type="application/x-mpegURL"></video></div>
-    <div class="player"><div class="player-headerCNN">CNN – Channel 3</div><video controls autoplay muted loop><source src="https://newsource-live.warnermediacdn.com/hls/live/2005456/intl07/master.m3u8" type="application/x-mpegURL"></video></div>
-    <div class="player"><div class="player-headerCNN">CNN – Channel 4</div><video controls autoplay muted loop><source src="https://newsource-live.warnermediacdn.com/hls/live/2005457/intl08/master.m3u8" type="application/x-mpegURL"></video></div>
-    <div class="player"><div class="player-headerCNN">CNN – Channel 5</div><video controls autoplay muted loop><source src="https://newsource-live.warnermediacdn.com/hls/live/2005458/intl09/master.m3u8" type="application/x-mpegURL"></video></div>
-    <div class="player"><div class="player-headerCNN">CNN – Channel 6</div><video controls autoplay muted loop><source src="https://newsource-live.warnermediacdn.com/hls/live/2005459/intl10/master.m3u8" type="application/x-mpegURL"></video></div>
-    <div class="player"><div class="player-headerCNN">CNN – Channel 7</div><video controls autoplay muted loop><source src="https://newsource-live.warnermediacdn.com/hls/live/2005460/intl11/master.m3u8" type="application/x-mpegURL"></video></div>
+    <div class="player"><div class="player-headerCNN">CNN – Channel 1</div><video controls autoplay muted loop><source src="https://newsource-live.warnermediacdn.com/hls/live/2039047/CNNNewsource1/master.m3u8" type="application/x-mpegURL"></video></div>
+    <div class="player"><div class="player-headerCNN">CNN – Channel 2</div><video controls autoplay muted loop><source src="https://newsource-live.warnermediacdn.com/hls/live/2039048/CNNNewsource2/master.m3u8" type="application/x-mpegURL"></video></div>
+    <div class="player"><div class="player-headerCNN">CNN – Channel 3</div><video controls autoplay muted loop><source src="https://newsource-live.warnermediacdn.com/hls/live/2039049/CNNNewsource3/master.m3u8" type="application/x-mpegURL"></video></div>
+    <div class="player"><div class="player-headerCNN">CNN – Channel 4</div><video controls autoplay muted loop><source src="https://newsource-live.warnermediacdn.com/hls/live/2039050/CNNNewsource4/master.m3u8" type="application/x-mpegURL"></video></div>
+    <div class="player"><div class="player-headerCNN">CNN – Channel 5</div><video controls autoplay muted loop><source src="https://newsource-live.warnermediacdn.com/hls/live/2039051/CNNNewsource5/master.m3u8" type="application/x-mpegURL"></video></div>
+    <div class="player"><div class="player-headerCNN">CNN – Channel 6</div><video controls autoplay muted loop><source src="https://newsource-live.warnermediacdn.com/hls/live/2039052/CNNNewsource6/master.m3u8" type="application/x-mpegURL"></video></div>
+    <div class="player"><div class="player-headerCNN">CNN – Channel 7</div><video controls autoplay muted loop><source src="https://newsource-live.warnermediacdn.com/hls/live/2039053/CNNNewsource7/master.m3u8" type="application/x-mpegURL"></video></div>
 </div>
 
 <div class="main-header">Förhandsvisning – livelinor från AP</div>
@@ -79,25 +51,4 @@
     <div class="player"><div class="player-headerAP">AP live choice 3</div><video controls autoplay muted loop><source src="https://streaming-a-806.cdn.nextologies.com/eZWEYDN1QYcHsM03/playlist.m3u8" type="application/x-mpegURL"></video></div>
     <div class="player"><div class="player-headerAP">AP live choice 4</div><video controls autoplay muted loop><source src="https://streaming-a-806.cdn.nextologies.com/dd20476021b1fc5dd4fe0e50fabdc2bz/playlist.m3u8" type="application/x-mpegURL"></video></div>
     <div class="player"><div class="player-headerAP">AP live choice 5</div><video controls autoplay muted loop><source src="https://streaming-a-806.cdn.nextologies.com/b88e314b3e2b62b5756ba2fc95289f21/playlist.m3u8" type="application/x-mpegURL"></video></div>
-    <div class="player"><div class="player-headerAP">AP live choice 6</div><video controls autoplay muted loop><source src="https://streaming-a-806.cdn.nextologies.com/38dafadc68316650d32c7e974332e5b8/playlist.m3u8" type="application/x-mpegURL"></video></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    var videoElements = document.querySelectorAll('video');
-    videoElements.forEach(function (video) {
-        var source = video.querySelector('source').src;
-        if (Hls.isSupported()) {
-            var hls = new Hls();
-            hls.loadSource(source);
-            hls.attachMedia(video);
-            hls.on(Hls.Events.MANIFEST_PARSED, function () { video.play(); });
-        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-            video.src = source;
-            video.addEventListener('canplay', function () { video.play(); });
-        }
-    });
-});
-</script>
-</body>
-</html>
+    <div class="
