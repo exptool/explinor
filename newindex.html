@@ -33,13 +33,14 @@
     <div class="player"><div class="player-headerCNN">CNN – Ins HD2</div><video controls muted loop playsinline><source src="https://newsource-live.warnermediacdn.com/hls/live/2005451/intl02/master.m3u8" type="application/x-mpegURL"></video></div>
     <div class="player"><div class="player-headerCNN">CNN – Ins HD3</div><video controls muted loop playsinline><source src="https://newsource-live.warnermediacdn.com/hls/live/2005452/intl03/master.m3u8" type="application/x-mpegURL"></video></div>
     <div class="player"><div class="player-headerCNN">CNN – Ins HD4</div><video controls muted loop playsinline><source src="https://newsource-live.warnermediacdn.com/hls/live/2005453/intl04/master.m3u8" type="application/x-mpegURL"></video></div>
+    
     <div class="player"><div class="player-headerCNN">CNN – Channel 1</div><video controls muted loop playsinline><source src="https://newsource-live.warnermediacdn.com/hls/live/2039047/CNNNewsource1/master.m3u8" type="application/x-mpegURL"></video></div>
-    <div class="player"><div class="player-headerCNN">CNN – Channel 2</div><video controls muted loop playsinline><source src="https://newsource-live.warnermediacdn.com/hls/live/2039048/CNNNewsource2/master.m3u8" type="application/x-mpegURL"></video></div>
-    <div class="player"><div class="player-headerCNN">CNN – Channel 3</div><video controls muted loop playsinline><source src="https://newsource-live.warnermediacdn.com/hls/live/2039049/CNNNewsource3/master.m3u8" type="application/x-mpegURL"></video></div>
-    <div class="player"><div class="player-headerCNN">CNN – Channel 4</div><video controls muted loop playsinline><source src="https://newsource-live.warnermediacdn.com/hls/live/2039050/CNNNewsource4/master.m3u8" type="application/x-mpegURL"></video></div>
-    <div class="player"><div class="player-headerCNN">CNN – Channel 5</div><video controls muted loop playsinline><source src="https://newsource-live.warnermediacdn.com/hls/live/2039051/CNNNewsource5/master.m3u8" type="application/x-mpegURL"></video></div>
-    <div class="player"><div class="player-headerCNN">CNN – Channel 6</div><video controls muted loop playsinline><source src="https://newsource-live.warnermediacdn.com/hls/live/2039052/CNNNewsource6/master.m3u8" type="application/x-mpegURL"></video></div>
-    <div class="player"><div class="player-headerCNN">CNN – Channel 7</div><video controls muted loop playsinline><source src="https://newsource-live.warnermediacdn.com/hls/live/2039053/CNNNewsource7/master.m3u8" type="application/x-mpegURL"></video></div>
+    <div class="player"><div class="player-headerCNN">CNN – Channel 2</div><video controls muted loop playsinline><source src="https://newsource-live.warnermediacdn.com/hls/live/2039049/CNNNewsource2/master.m3u8" type="application/x-mpegURL"></video></div>
+    <div class="player"><div class="player-headerCNN">CNN – Channel 3</div><video controls muted loop playsinline><source src="https://newsource-live.warnermediacdn.com/hls/live/2039051/CNNNewsource3/master.m3u8" type="application/x-mpegURL"></video></div>
+    <div class="player"><div class="player-headerCNN">CNN – Channel 4</div><video controls muted loop playsinline><source src="https://newsource-live.warnermediacdn.com/hls/live/2039053/CNNNewsource4/master.m3u8" type="application/x-mpegURL"></video></div>
+    <div class="player"><div class="player-headerCNN">CNN – Channel 5</div><video controls muted loop playsinline><source src="https://newsource-live.warnermediacdn.com/hls/live/2039055/CNNNewsource5/master.m3u8" type="application/x-mpegURL"></video></div>
+    <div class="player"><div class="player-headerCNN">CNN – Channel 6</div><video controls muted loop playsinline><source src="https://newsource-live.warnermediacdn.com/hls/live/2039057/CNNNewsource6/master.m3u8" type="application/x-mpegURL"></video></div>
+    <div class="player"><div class="player-headerCNN">CNN – Channel 7</div><video controls muted loop playsinline><source src="https://newsource-live.warnermediacdn.com/hls/live/2039059/CNNNewsource7/master.m3u8" type="application/x-mpegURL"></video></div>
 </div>
 
 <div class="main-header">Förhandsvisning – livelinor från AP</div>
@@ -62,18 +63,13 @@ document.addEventListener('DOMContentLoaded', function () {
         var source = sourceElement.src;
 
         if (Hls.isSupported()) {
-            var hls = new Hls({
-                // Optimerar för många samtidiga strömmar
-                maxMaxBufferLength: 10
-            });
+            var hls = new Hls({ maxMaxBufferLength: 10 });
             hls.loadSource(source);
             hls.attachMedia(video);
             hls.on(Hls.Events.MANIFEST_PARSED, function () {
                 var playPromise = video.play();
                 if (playPromise !== undefined) {
-                    playPromise.catch(function(error) {
-                        console.warn("Autoplay blockerad eller pausad för en video:", error);
-                    });
+                    playPromise.catch(function(error) { console.warn("Autoplay blockerad:", error); });
                 }
             });
         } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
@@ -81,9 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
             video.addEventListener('loadedmetadata', function () {
                 var playPromise = video.play();
                 if (playPromise !== undefined) {
-                    playPromise.catch(function(error) {
-                        console.warn("Autoplay blockerad:", error);
-                    });
+                    playPromise.catch(function(error) { console.warn("Autoplay blockerad:", error); });
                 }
             });
         }
